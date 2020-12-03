@@ -3,11 +3,17 @@ class User {
 	constructor() {
 
 		this.users = [];
+		this.lastMessages = [];
 	}
 
 	get getUsers() {
 
 		return this.users;
+	}
+
+	get getLastMessages() {
+
+		return this.lastMessages;
 	}
 
 	saveUser(data) {
@@ -27,6 +33,11 @@ class User {
 		const users = this.users.filter(el => el.id !== id);
 
 		this.users = users;
+	}
+
+	lastMessagesPrivate(message) {
+
+		this.lastMessages.push(message);
 	}
 }
 
